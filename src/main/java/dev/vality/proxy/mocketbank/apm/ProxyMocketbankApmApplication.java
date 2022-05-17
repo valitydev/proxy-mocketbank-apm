@@ -1,7 +1,6 @@
 package dev.vality.proxy.mocketbank.apm;
 
 import dev.vality.proxy.mocketbank.apm.config.properties.AdapterProperties;
-import dev.vality.proxy.mocketbank.apm.config.properties.ErrorMappingProperties;
 import dev.vality.proxy.mocketbank.apm.config.properties.HellgateAdapterClientProperties;
 import dev.vality.proxy.mocketbank.apm.config.properties.RestTemplateProperties;
 import org.springframework.boot.SpringApplication;
@@ -11,7 +10,7 @@ import org.springframework.boot.web.servlet.ServletComponentScan;
 
 @ServletComponentScan
 @SpringBootApplication
-@EnableConfigurationProperties(value = {ErrorMappingProperties.class, HellgateAdapterClientProperties.class,
+@EnableConfigurationProperties(value = {HellgateAdapterClientProperties.class,
         RestTemplateProperties.class, AdapterProperties.class})
 public class ProxyMocketbankApmApplication extends SpringApplication {
 

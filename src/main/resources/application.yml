@@ -46,8 +46,8 @@ adapter:
   redirectTimeout: 60000
 
 error-mapping:
-  filePath: classpath:fixture/errors.json
-  pattern: "'%s' - '%s'" # 'code' - 'description'
+  file: classpath:fixture/errors.json
+  patternReason: "'%s' - '%s'" # 'code' - 'description'
 
 hellgate:
   client:

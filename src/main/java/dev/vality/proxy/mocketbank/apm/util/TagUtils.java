@@ -1,9 +1,8 @@
 package dev.vality.proxy.mocketbank.apm.util;
 
-import lombok.AccessLevel;
-import lombok.NoArgsConstructor;
+import lombok.experimental.UtilityClass;
 
-@NoArgsConstructor(access = AccessLevel.PRIVATE)
+@UtilityClass
 public final class TagUtils {
 
     public static String addPrefix(String string, String prefix) {

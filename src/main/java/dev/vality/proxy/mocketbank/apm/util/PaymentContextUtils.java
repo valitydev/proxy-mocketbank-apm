@@ -1,10 +1,9 @@
 package dev.vality.proxy.mocketbank.apm.util;
 
 import dev.vality.damsel.proxy_provider.PaymentInfo;
-import lombok.AccessLevel;
-import lombok.NoArgsConstructor;
+import lombok.experimental.UtilityClass;
 
-@NoArgsConstructor(access = AccessLevel.PRIVATE)
+@UtilityClass
 public final class PaymentContextUtils {
 
     private static final String SEPARATOR = ".";

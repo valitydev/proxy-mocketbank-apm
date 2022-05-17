@@ -16,6 +16,14 @@
     <name>proxy-mocketbank-apm</name>
     <description>Service for proxy test APM transactions</description>
 
+    <repositories>
+        <repository>
+            <id>github</id>
+            <name>GitHub Packages</name>
+            <url>https://maven.pkg.github.com/empayre/swag-wallets</url>
+        </repository>
+    </repositories>
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -50,6 +58,15 @@
         <dependency>
             <groupId>dev.vality</groupId>
             <artifactId>error-mapping-java</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>dev.vality</groupId>
+            <artifactId>wallets</artifactId>
+            <version>1.1-4f7ea1f-client</version>
+        </dependency>
+        <dependency>
+            <groupId>dev.vality</groupId>
+            <artifactId>adapter-bank-payout-spring-boot-starter</artifactId>
         </dependency>
 
         <!--spring-->

@@ -1,4 +1,4 @@
-package dev.vality.proxy.mocketbank.apm.converter;
+package dev.vality.proxy.mocketbank.apm.converter.request;
 
 import dev.vality.damsel.domain.PaymentService;
 import dev.vality.damsel.proxy_provider.Cash;

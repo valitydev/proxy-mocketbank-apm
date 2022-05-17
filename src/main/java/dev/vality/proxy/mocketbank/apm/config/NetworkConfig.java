@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @Configuration
-public class NetworkConfiguration {
+public class NetworkConfig {
 
     @Value("${server.rest.port}")
     private int restPort;
