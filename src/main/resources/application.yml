@@ -1,5 +1,8 @@
 server:
   port: '@server.port@'
+  rest:
+    port: 8080
+    endpoint: '@server.rest.endpoint@'
 
 management:
   security:
@@ -33,3 +36,28 @@ spring:
 info:
   version: '@project.version@'
   stage: dev
+
+adapter:
+  url: https://change_it
+  merchantRedirectUrl: https://change_it
+  notificationUrl: https://change_it
+  finishRedirectUrl: https://checkout.empayre.com/v1/finish-interaction.html
+  tag-prefix: PMB-NB-
+  redirectTimeout: 60000
+
+error-mapping:
+  filePath: classpath:fixture/errors.json
+  pattern: "'%s' - '%s'" # 'code' - 'description'
+
+hellgate:
+  client:
+    adapter:
+      url: http://localhost:8023/v1/proxyhost/provider
+      networkTimeout: 30000
+
+restTemplate:
+  requestTimeout: 60000
+  poolTimeout: 10000
+  connectionTimeout: 10000
+  maxTotalPooling: 200
+  defaultMaxPerRoute: 200

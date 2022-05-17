@@ -1,0 +1,11 @@
+[
+  {
+    "codeRegex": "ERROR",
+    "descriptionRegex": "ERROR",
+    "mapping": "authorization_failed:operation_blocked"
+  },
+  {
+    "codeRegex": ".*",
+    "mapping": "ResultUnexpected"
+  }
+]
