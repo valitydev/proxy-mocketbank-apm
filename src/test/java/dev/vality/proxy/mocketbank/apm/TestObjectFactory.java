@@ -14,6 +14,7 @@ import dev.vality.proxy.mocketbank.apm.model.TransactionStatus;
 import dev.vality.swag.wallets.model.wallets.BankIND;
 import dev.vality.swag.wallets.model.wallets.BankTransferIND;
 import dev.vality.swag.wallets.model.wallets.DestinationResource;
+import dev.vality.swag.wallets.model.wallets.DigitalWalletDestinationResource;
 
 import java.util.Collections;
 import java.util.Map;
@@ -105,6 +106,14 @@ public abstract class TestObjectFactory {
         BankIND bank = new BankIND();
         bank.setBranchCode(randomString());
         return bank;
+    }
+
+    public static DigitalWalletDestinationResource testDigitalWalletDestinationResource(String id) {
+        DigitalWalletDestinationResource resource = new DigitalWalletDestinationResource();
+        resource.setId(id);
+        resource.setProvider(randomString());
+        resource.setToken(randomString());
+        return resource;
     }
 
     public static String randomString() {

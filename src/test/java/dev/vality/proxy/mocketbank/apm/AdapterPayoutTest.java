@@ -81,9 +81,27 @@ public class AdapterPayoutTest {
     }
 
     @Test
-    void successPayout() throws Exception {
+    void successPayoutForBankTransferInd() throws Exception {
         DestinationResource bankTransfer = TestObjectFactory.testBankTransferResource(SUCCESS_ID);
         Withdrawal withdrawal = TestObjectFactory.testWithdrawal(mapper.writeValueAsBytes(bankTransfer));
+        AdapterState adapterState = new AdapterState();
+        adapterState.setTrxInfo(new TransactionInfo());
+        adapterState.setPollingInfo(null);
+
+        ProcessResult payoutResult =
+                payoutAdapterService.processWithdrawal(
+                        withdrawal,
+                        bin(adapterStateSerializer.writeByte(adapterState)),
+                        Collections.emptyMap());
+
+        assertTrue(payoutResult.getIntent().getFinish().getStatus().isSetSuccess());
+    }
+
+    @Test
+    void successPayoutForDigitalWallet() throws Exception {
+        DestinationResource resource = TestObjectFactory.testDigitalWalletDestinationResource(SUCCESS_ID);
+        resource.setType(DestinationResource.TypeEnum.DIGITALWALLETDESTINATIONRESOURCE);
+        Withdrawal withdrawal = TestObjectFactory.testWithdrawal(mapper.writeValueAsBytes(resource));
         AdapterState adapterState = new AdapterState();
         adapterState.setTrxInfo(new TransactionInfo());
         adapterState.setPollingInfo(null);
