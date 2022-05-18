@@ -17,6 +17,9 @@ public class BankTransferIndExtractor implements DestinationExtractor {
             BankTransferIND bankTransfer = (BankTransferIND) destinationResource;
             return ApmDestinationResource.builder()
                     .id(bankTransfer.getAccountNumber())
+                    .accountName(bankTransfer.getAccountName())
+                    .bankCode(bankTransfer.getBank().getBranchCode())
+                    .bankName(bankTransfer.getBank().getName())
                     .build();
         }
         return next.extractSource(destinationResource);

@@ -17,6 +17,9 @@ public class BankTransferJpyExtractor implements DestinationExtractor {
             BankTransferJPY bankTransfer = (BankTransferJPY) destinationResource;
             return ApmDestinationResource.builder()
                     .id(bankTransfer.getAccountNumber())
+                    .accountName(bankTransfer.getAccountName())
+                    .bankCode(bankTransfer.getBank().getCode())
+                    .bankName(bankTransfer.getBank().getName())
                     .build();
         }
         return next.extractSource(destinationResource);

@@ -17,6 +17,8 @@ public class DigitalWalletExtractor implements DestinationExtractor {
             DigitalWalletDestinationResource digitalWallet = (DigitalWalletDestinationResource) destinationResource;
             return ApmDestinationResource.builder()
                     .id(digitalWallet.getId())
+                    .token(digitalWallet.getToken())
+                    .provider(digitalWallet.getProvider())
                     .build();
         }
         return next.extractSource(destinationResource);

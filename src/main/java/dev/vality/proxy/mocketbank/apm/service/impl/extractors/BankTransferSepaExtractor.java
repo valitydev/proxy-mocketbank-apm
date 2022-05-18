@@ -17,6 +17,7 @@ public class BankTransferSepaExtractor implements DestinationExtractor {
             BankTransferSEPA bankTransfer = (BankTransferSEPA) destinationResource;
             return ApmDestinationResource.builder()
                     .id(bankTransfer.getAccountNumber())
+                    .accountName(bankTransfer.getAccountName())
                     .build();
         }
         return next.extractSource(destinationResource);
