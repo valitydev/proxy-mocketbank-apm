@@ -88,6 +88,7 @@ public class RestTemplateConfig {
     public RestTemplate restTemplate(RestTemplateBuilder restTemplateBuilder) {
         final FormHttpMessageConverter formHttpMessageConverter = new FormHttpMessageConverter();
         formHttpMessageConverter.addSupportedMediaTypes(MediaType.TEXT_HTML);
+        formHttpMessageConverter.addSupportedMediaTypes(MediaType.APPLICATION_FORM_URLENCODED);
         RestTemplate restTemplate = restTemplateBuilder
                 .setConnectTimeout(Duration.ofMillis(restTemplateProperties.getConnectionTimeout()))
                 .setReadTimeout(Duration.ofMillis(restTemplateProperties.getRequestTimeout()))

@@ -38,11 +38,9 @@ info:
   stage: dev
 
 adapter:
-  url: https://change_it
-  merchantRedirectUrl: https://change_it
-  notificationUrl: https://change_it
+  url: http://localhost:8080/@server.rest.endpoint@
   finishRedirectUrl: https://checkout.empayre.com/v1/finish-interaction.html
-  tag-prefix: PMB-NB-
+  tag-prefix: PMB-APM-
   redirectTimeout: 60000
 
 error-mapping:

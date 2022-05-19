@@ -17,12 +17,6 @@ public class AdapterProperties {
     private String url;
 
     @NotNull
-    private String merchantRedirectUrl;
-
-    @NotNull
-    private String notificationUrl;
-
-    @NotNull
     private String finishRedirectUrl;
 
     @NotNull

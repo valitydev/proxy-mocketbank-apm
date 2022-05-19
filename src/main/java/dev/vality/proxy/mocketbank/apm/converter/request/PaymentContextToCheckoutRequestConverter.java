@@ -40,8 +40,6 @@ public class PaymentContextToCheckoutRequestConverter implements Converter<Payme
                 PaymentMode.getPaymentModeByCategory(paymentService.getCategory()).name());
         String paymentBrand = options.getOrDefault(PAYMENT_BRAND, paymentService.getBrandName());
         return CheckoutRequest.builder()
-                .redirectUrl(properties.getMerchantRedirectUrl())
-                .notificationUrl(properties.getNotificationUrl())
                 .amount(amount)
                 .transactionId(invoicePaymentId)
                 .orderDescription(invoice.getDetails().getDescription())

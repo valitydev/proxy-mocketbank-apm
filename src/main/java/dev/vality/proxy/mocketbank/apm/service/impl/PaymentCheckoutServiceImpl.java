@@ -27,6 +27,8 @@ import java.nio.ByteBuffer;
 import java.util.HashMap;
 import java.util.Map;
 
+import static dev.vality.proxy.mocketbank.apm.constant.UrlPaths.CHECKOUT_PATH;
+
 @Slf4j
 @Service
 @RequiredArgsConstructor
@@ -77,7 +79,7 @@ public class PaymentCheckoutServiceImpl implements PaymentCheckoutService {
                 adapterProperties.getTagPrefix()
         );
         BrowserPostRequest browserPostRequest
-                = new BrowserPostRequest(adapterProperties.getUrl(), params);
+                = new BrowserPostRequest(adapterProperties.getUrl() + CHECKOUT_PATH, params);
         UserInteraction userInteraction = UserInteraction.redirect(BrowserHTTPRequest.post_request(browserPostRequest));
         TimeoutBehaviour timeoutBehaviour = new TimeoutBehaviour();
         timeoutBehaviour.setCallback(ByteBuffer.wrap(new byte[0]));

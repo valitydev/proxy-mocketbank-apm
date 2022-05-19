@@ -16,8 +16,6 @@ public class CheckoutRequest {
     private String transactionId;
     private String amount;
     private String orderDescription;
-    private String redirectUrl;
-    private String notificationUrl;
     private String currency;
     private String paymentMode;
     private String paymentBrand;
