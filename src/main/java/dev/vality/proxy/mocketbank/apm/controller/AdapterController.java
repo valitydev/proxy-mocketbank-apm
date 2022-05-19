@@ -56,7 +56,7 @@ public class AdapterController {
     }
 
     @PostMapping(value = CHECKOUT_PATH, consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
-    public ModelAndView formAcs(@ModelAttribute CheckoutRequest request) {
+    public ModelAndView checkout(@ModelAttribute CheckoutRequest request) {
         log.info("Provider receive checkout request: {}", request);
         ModelAndView model = new ModelAndView();
         model.setViewName("apm");
@@ -66,11 +66,11 @@ public class AdapterController {
     }
 
     @PostMapping(value = CONFIRMATION_PATH, params = "success")
-    public String successPay(HttpServletRequest servletRequest,
-                             HttpServletResponse servletResponse) {
+    public String successConfirm(HttpServletRequest servletRequest,
+                                 HttpServletResponse servletResponse) {
         try {
             String transactionId = servletRequest.getParameter("transactionId");
-            log.info("Success pay with transactionId: {}", transactionId);
+            log.info("Success payment with transactionId: {}", transactionId);
             ProviderResponse response = ProviderResponse.builder()
                     .status(TransactionStatus.SUCCESS)
                     .transactionId(transactionId)
@@ -92,11 +92,11 @@ public class AdapterController {
     }
 
     @PostMapping(value = CONFIRMATION_PATH, params = "decline")
-    public String declinePay(HttpServletRequest servletRequest,
-                             HttpServletResponse servletResponse) {
+    public String declineConfirm(HttpServletRequest servletRequest,
+                                 HttpServletResponse servletResponse) {
         try {
             String transactionId = servletRequest.getParameter("transactionId");
-            log.info("Decline pay with transactionId: {}", transactionId);
+            log.info("Decline payment with transactionId: {}", transactionId);
             ProviderResponse response = ProviderResponse.builder()
                     .status(TransactionStatus.FAILURE)
                     .transactionId(transactionId)
