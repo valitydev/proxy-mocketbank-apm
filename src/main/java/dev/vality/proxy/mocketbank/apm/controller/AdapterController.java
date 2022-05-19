@@ -91,9 +91,9 @@ public class AdapterController {
         restTemplate.postForEntity(url, new HttpEntity<>(response, headers), Object.class);
     }
 
-    @PostMapping(value = CONFIRMATION_PATH, params = "cancel")
-    public String cancelPay(HttpServletRequest servletRequest,
-                            HttpServletResponse servletResponse) {
+    @PostMapping(value = CONFIRMATION_PATH, params = "decline")
+    public String declinePay(HttpServletRequest servletRequest,
+                             HttpServletResponse servletResponse) {
         try {
             String transactionId = servletRequest.getParameter("transactionId");
             log.info("Decline pay with transactionId: {}", transactionId);

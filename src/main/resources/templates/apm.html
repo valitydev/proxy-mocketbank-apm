@@ -1,0 +1,23 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Apm form</title>
+    <link th:href="@{/css/style.css}" href="/css/style.css" rel="stylesheet" type="text/css"/>
+</head>
+
+<body>
+<form action="#" th:action="${action}" method="post">
+    <input type="hidden" name="transactionId" th:value="${TrxId}"/>
+    <h1>APM payment</h1>
+    <div class="info">
+        <div class="row">
+            <span class="left">Transaction:</span>
+            <span class="right" th:text="${TrxId}"></span>
+        </div>
+    </div>
+    <input type='submit' name="success" value='Success'/>
+    <input type="submit" name="decline" value="Decline"/>
+</form>
+</body>
+
+</html>
